@@ -1,0 +1,108 @@
+Sequences Practice Problems:
+
+1. Use Random Function (( RANDOM )) to get Single Digit
+
+	nano -T3 singledigitRANDOMnumber.sh
+
+		a=$((RANDOM%10));
+		echo "The RANDOM single digit number is : $a";
+
+2. Use Random to get Dice Number between 1 to 6
+
+	nano -T3 RANDOMdicenumber.sh
+
+		a=$((RANDOM%6 + 1));
+		echo " The RANDOM Dice Number is : $a";
+
+3. Add two Random Dice Number and Print the Result
+
+	nano -T3 addtwoRANDOMdicenumbers.sh
+
+		a=$((RANDOM%6 + 1));
+		b=$((RANDOM%6 + 1));
+		c=$(($a + $b));
+		echo " the addition of two RANDOM dice numbers is : $c";
+
+4. Write a program that reads 5 Random 2 Digit values , then find their
+sum and the average
+
+	nano -T3 fiveRANDOMtwodigits.sh
+
+		a=$((RANDOM%90 + 10));
+		b=$((RANDOM%90 + 10));
+		c=$((RANDOM%90 + 10));
+		d=$((RANDOM%90 + 10));
+		e=$((RANDOM%90 + 10));
+		sum=$(($a + $b + $c + $d + $e));
+		avg=$(($sum/5));
+		echo " Sum of 5 Random 2 digit numbers is : $sum";
+		echo " Average of 5 Random 2 digit numbers is : $avg";
+
+5. Unit Conversion
+a. 1ft = 12 in then 42 in = ? ft
+b. Rectangular Plot of 60 feet x 40 feet in meters
+c. Calculate area of 25 such plots in acres
+
+	nano -T3 UnitConversion.sh
+
+read -p "Enter no. of inches : " inche;
+feet = 12;
+totalfeet = $(($inche / $feet)); 
+echo " Total feet is " : $totalfeet
+
+
+
+
+
+
+
+
+
+
+
+
+
+6.Write a program that takes a date as input and prints the day of the week
+  that date falls on. Your program should take three command-line arguments:
+  m (month), d (day), and y (year). For m use 1 for January, 2 for February, and
+  so forth. For output print 0 for Sunday, 1 for Monday, 2 for Tuesday, and so
+  forth. Use the following formulas, for the Gregorian calendar (where /
+  denotes integer division):
+	• y0 = y − (14 − m) / 12
+	• x = y0 + y0/4 − y0/100 + y0/400
+	• m0 = m + 12 × ((14 − m) / 12) − 2
+	• d0 = (d + x + 31m0 / 12) mod 7
+
+		nano -T3 DateofDay.sh
+
+		
+      read -p " Give the value of month(m) : " m;
+	#echo $m;
+      read -p " Give the value of day(d) : " d;
+	#echo $d;
+      read -p " Give the value of year(y) : " y;
+	#echo $y;
+   y0=$(($y - ((14 - $m) / 12)));
+	#echo $y0;
+   x=$(($y0 + ($y0 / 4) - ($y0 / 100) + ($y0 / 400)));
+	#echo $x;
+   m0=$(($m + (12 * ((14 - $m) / 12)) - 2));
+	#echo $m0;
+   d0=$((($d + $x + ((31 * $m0) / 12))%7));
+	echo $d0;
+
+      if [ $d0 -eq 0 ]
+         then echo "Sunday";
+         elif [ $d0 -eq 1 ]
+         then echo "Monday";
+         elif [ $d0 -eq 2 ]
+         then echo "Tuesday";
+         elif [ $d0 -eq 3 ]
+         then echo "Wednesday";
+         elif [ $d0 -eq 4 ]
+         then echo "Thursday";
+         elif [ $d0 -eq 5 ]
+         then echo "Friday";
+         elif [ $d0 -eq 6 ]
+         then echo "Saturday";
+      fi

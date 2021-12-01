@@ -1,0 +1,120 @@
+Selection Practice Problems with if, elif and else
+
+
+1. Read a single digit number and write the number in word
+	
+nano -T3 singledigitnuminwords.sh
+
+read -p "Enter a single digit number : " a;
+if [ $a -eq 0 ]
+then
+echo " the given number is Zero";
+elif [ $a -eq 1 ]
+then
+echo "The given number is One";
+elif [ $a -eq 2 ]
+then
+echo "The given number is Two";
+elif [ $a -eq 3 ]
+then
+echo "The given number is Three";
+elif [ $a -eq 4 ]
+then
+echo "The given number is Four";
+elif [ $a -eq 5 ]
+then
+echo "The given number is Five";
+elif [ $a -eq 6 ]
+then
+echo "The given number is Six";
+elif [ $a -eq 7 ]
+then
+echo "The given number is Seven";
+elif [ $a -eq 8 ]
+then
+echo "The given number is Eight";
+elif [ $a -eq 9 ]
+then
+echo "The given number is Nine";
+fi
+
+
+2. Read a Number and Display the week day (Sunday, Monday,…)
+
+nano -T3 displayweekday.sh
+
+read -p " Enter the number : " a;
+if [ $a -eq 0 ]
+then
+echo "Sunday";
+elif [ $a -eq 1 ]
+then
+echo "Monday";
+elif [ $a -eq 2 ]
+then
+echo "Tuesday";
+elif [ $a -eq 3 ]
+then
+echo "Wednesday";
+elif [ $a -eq 4 ]
+then
+echo "Thursday";
+elif [ $a -eq 5 ]
+then
+echo "Friday";
+elif [ $a -eq 6 ]
+then
+echo "Saturday";
+fi
+
+
+
+3. Read a Number 1, 10, 100, 1000, etc and display unit, ten, hundred,…
+
+nano -T3 displaynumbers.sh
+
+read -p " Enter the number : " a;
+if [ $a -eq 1 ]
+then
+echo "Unit";
+elif [ $a -eq 10 ]
+then
+echo "Ten";
+elif [ $a -eq 100 ]
+then
+echo "Hundred";
+elif [ $a -eq 1000 ]
+then
+echo "Thousand";
+elif [ $a -eq 10000 ]
+then
+echo "Ten Thousand";
+elif [ $a -eq 100000 ]
+then
+echo "Lakh";
+elif [ $a -eq 1000000 ]
+then
+echo "Ten lakh";
+else
+echo "Not a valid number";
+fi
+
+
+4. Enter 3 Numbers do following arithmetic operation and find the one that
+is maximum and minimum
+1. a + b * c 3. c + a / b
+2. a % b + c 4. a * b + c
+
+nano -T3 findmaxminnumbers.sh
+
+read -p " Enter value of a: " a;
+read -p " Enter value of b: " b;
+read -p " Enter value of c: " c;
+
+i=$(( $a + $b * $c);
+j=$(( $a % $b + $c);
+k=$(( $c + $a / $b);
+l=$(( $a * $b + $c);
+
+if [ $i -gt $j && $i -gt $k && $i -gt $l ]
+then 
